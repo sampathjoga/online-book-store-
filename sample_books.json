@@ -1,0 +1,24 @@
+[
+  {
+    "model": "BooksApp.book",
+    "pk": 1,
+    "fields": {
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "price": "299.00",
+      "description": "A novel about a shepherd's journey.",
+      "image": "books/alchemist.jpg"
+    }
+  },
+  {
+    "model": "BooksApp.book",
+    "pk": 2,
+    "fields": {
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "price": "450.00",
+      "description": "A guide to building better habits.",
+      "image": "books/atomic.jpg"
+    }
+  }
+]
