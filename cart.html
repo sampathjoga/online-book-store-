@@ -1,0 +1,15 @@
+{% extends 'BooksApp/base.html' %}
+{% block content %}
+<h2>Your Cart</h2>
+
+<ul>
+
+  {% for item in items %}
+    <li>{{ item.book.title }} (x{{ item.quantity }}) - ₹{{ item.total_price }}</li>
+  {% empty %}
+    <li>Your cart is empty.</li>
+  {% endfor %}
+</ul>
+<p>Total: ₹{{ total }}</p>
+<button><a href="/checkout/">Proceed to Checkout</a></button>
+{% endblock %}

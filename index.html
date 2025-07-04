@@ -1,0 +1,16 @@
+{% extends 'BooksApp/base.html' %}
+{% block content %}
+
+<h1>Available Books</h1>
+<ul>
+  {% for book in books %}
+    <li>
+      <strong>{{ book.title }}</strong> by {{ book.author }} — ₹{{ book.price }}
+      <img src="{{ book.image.url }}" width="100" />
+      <br>
+      <button><a text-decoration="none" href="/add-to-cart/{{ book.id }}/">Add to Cart</a></button>
+    </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

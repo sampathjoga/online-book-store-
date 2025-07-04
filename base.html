@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookstore</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/style.css' %}">
+</head>
+<body bgcolor="grey">
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/cart/">Cart</a> |
+        {% if user.is_authenticated %}
+            <a href="/logout/">Logout</a>
+        {% else %}
+            <a href="/login/">Login</a> |
+            <a href="/register/">Register</a>
+        {% endif %}
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

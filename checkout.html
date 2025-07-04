@@ -1,0 +1,19 @@
+{% extends 'BooksApp/base.html' %}
+{% block content %}
+{%load static%}
+<h2>Checkout</h2>
+{% if order %}
+  <p>Order placed successfully! Order ID: {{ order.id }}</p>
+{% else %}
+  <ul>
+    {% for item in items %}
+      <li>{{ item.book.title }} (x{{ item.quantity }}) - ₹{{ item.total_price }}</li>
+    {% endfor %}
+  </ul>
+  <p>Total: ₹{{ total }}</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm Order</button>
+  </form>
+{% endif %}
+{% endblock %}
